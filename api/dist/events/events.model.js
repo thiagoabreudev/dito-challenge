@@ -1,12 +1,15 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-const events = [
-    { event: 'buy', timestamp: "2016-09-22T13:57:31.2311892-04:00" },
-    { event: 'sell', timestamp: "2016-09-21T13:57:31.2311892-04:00" }
-];
-class Event {
-    static findAll() {
-        return Promise.resolve(events);
+const mongoose = require("mongoose");
+const eventSchema = new mongoose.Schema({
+    event: {
+        type: String,
+        required: true
+    },
+    timestamp: {
+        type: Date,
+        required: true,
+        default: Date.now
     }
-}
-exports.Event = Event;
+});
+exports.Event = mongoose.model('Event', eventSchema);

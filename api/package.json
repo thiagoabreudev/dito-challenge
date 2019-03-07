@@ -10,9 +10,11 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "mongoose": "^5.4.17",
     "restify": "^8.1.0"
   },
   "devDependencies": {
+    "@types/mongoose": "^5.3.21",
     "@types/restify": "^7.2.8"
   }
 }

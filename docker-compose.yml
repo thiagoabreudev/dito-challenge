@@ -1,5 +1,16 @@
 version: '3'
+volumes: 
+  mongo-data:
 services: 
+  mongodb: 
+    image: mongo:latest
+    environment: 
+      - MONGO_DATA_DIR=/data/db
+    volumes: 
+      - 'mongo-data:/data/db'
+    ports: 
+      - '27017:27017'
+    command: mongod
   node: 
     build:
       context: .
@@ -8,3 +19,5 @@ services:
       - './api:/api'
     ports: 
       - '3000:3000'
+    depends_on:
+      - mongodb
