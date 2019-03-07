@@ -1,4 +1,13 @@
 version: '3'
 services: 
+  tsc: 
+    build:
+      context: .
+      dockerfile: 'containers/node/Dockerfile'
+    command: 'tsc -w'
+    volumes: 
+      - './api:/api'
   node: 
-    command: 'nodemon /app/dist/index.js'
+    command: 'nodemon /api/dist/main.js'
+    depends_on: 
+      - 'tsc'

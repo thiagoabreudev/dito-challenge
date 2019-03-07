@@ -1,5 +1,5 @@
 {
-  "name": "app",
+  "name": "api",
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
@@ -8,5 +8,11 @@
   },
   "keywords": [],
   "author": "",
-  "license": "ISC"
+  "license": "ISC",
+  "dependencies": {
+    "restify": "^8.1.0"
+  },
+  "devDependencies": {
+    "@types/restify": "^7.2.8"
+  }
 }
