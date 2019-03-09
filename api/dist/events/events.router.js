@@ -5,8 +5,16 @@ const events_model_1 = require("../events/events.model");
 class EventRouter extends router_1.Router {
     applyRoutes(application) {
         application.get('/events', (req, resp, next) => {
-            events_model_1.Event.find().then(users => {
-                resp.json(users);
+            let results;
+            let eventName = req.query.q;
+            if (eventName) {
+                results = events_model_1.Event.find({ event: { '$regex': eventName } });
+            }
+            else {
+                results = events_model_1.Event.find();
+            }
+            results.then(events => {
+                resp.json(events);
                 return next();
             });
         }),

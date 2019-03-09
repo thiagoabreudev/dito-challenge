@@ -5,8 +5,15 @@ import {Event} from '../events/events.model'
 class EventRouter extends Router {
     applyRoutes(application: restify.Server) {
         application.get('/events', (req, resp, next) => {
-            Event.find().then(users => {
-                resp.json(users)
+            let results;
+            let eventName = req.query.q
+            if (eventName) {
+                 results = Event.find({event: {'$regex': eventName}})
+            } else {
+                results = Event.find()    
+            } 
+            results.then(events=>{
+                resp.json(events)
                 return next()
             })
         }), 
