@@ -11,3 +11,7 @@ services:
     command: 'nodemon /api/dist/main.js'
     depends_on: 
       - 'tsc'
+  vue: 
+    command: 'npm run dev'
+    ports: 
+      - 8080:8080

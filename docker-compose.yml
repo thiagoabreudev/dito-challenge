@@ -21,3 +21,14 @@ services:
       - '3000:3000'
     depends_on:
       - mongodb
+  vue:
+    build:
+      context: .
+      dockerfile: 'containers/vue/Dockerfile'
+    volumes:
+      - './frontend:/frontend'
+    depends_on:
+      - node
+    environment:
+      - HOST=0.0.0.0
+      - PORT=8080
