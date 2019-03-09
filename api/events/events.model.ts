@@ -1,5 +1,10 @@
 import * as mongoose from 'mongoose'
 
+export interface Event extends mongoose.Document {
+    event: string, 
+    timestamp: Date
+}
+
 const eventSchema = new mongoose.Schema({
     event: {
         type: String, 
@@ -12,4 +17,4 @@ const eventSchema = new mongoose.Schema({
     }
 })
 
-export const Event = mongoose.model('Event', eventSchema)
+export const Event = mongoose.model<Event>('Event', eventSchema)

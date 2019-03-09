@@ -9,7 +9,14 @@ class EventRouter extends router_1.Router {
                 resp.json(users);
                 return next();
             });
-        });
+        }),
+            application.post('/events', (req, resp, next) => {
+                let event = new events_model_1.Event(req.body);
+                event.save().then(event => {
+                    resp.json(event);
+                    return next();
+                });
+            });
     }
 }
 exports.eventsRouter = new EventRouter();
