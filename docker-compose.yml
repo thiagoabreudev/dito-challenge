@@ -17,8 +17,6 @@ services:
       dockerfile: 'containers/node/Dockerfile'
     volumes: 
       - './api:/api'
-    ports: 
-      - '3000:3000'
     depends_on:
       - mongodb
   vue:

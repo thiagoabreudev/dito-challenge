@@ -22,15 +22,15 @@ export default new Vuex.Store({
   },
   actions: {
     addEvent({ dispatch }, payload) {
-      axios.post(`http://localhost:3000/events`, payload)
+      axios.post(`/events`, payload)
         .then(response => dispatch('loadEvents'))
     },
     loadEvents({ commit, state }) {
-      axios.get(`http://localhost:3000/events?q=${state.query}`)
+      axios.get(`/events?q=${state.query}`)
         .then(response => commit('setEvents', response.data))
     },
     loadTimeLine({ commit }) {
-      axios.get('http://localhost:3000/timeline')
+      axios.get('/timeline')
         .then(response => commit('setTimeLine', response.data))
     },
 
