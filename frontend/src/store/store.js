@@ -10,16 +10,25 @@ export default new Vuex.Store({
     state: {
         query: '',
         events: [],
+        timeline: {timeline: []}
     },
     mutations: {
         setEvents(state, payload) {
             state.events = payload
+        },
+        setTimeLine(state, payload) {
+            state.timeline = payload
         }
     },
     actions: {
         loadEvents({commit}) {
             axios.get('http://localhost:3000/events')
                 .then(response => commit('setEvents', response.data))
+        }, 
+        loadTimeLine({commit}) {
+            axios.get('http://localhost:3000/timeline')
+                .then(response=>commit('setTimeLine', response.data))
         }
+        
     }    
 })

@@ -1,15 +1,29 @@
 import Vue from 'vue'
 import Router from 'vue-router'
-import Container from '@/components/Container'
+import DitoAutocomplete from '@/pages/DitoAutocomplete'
+import DitoTimeLine from '@/pages/DitoTimeLine'
 
 Vue.use(Router)
 
-export default new Router({
+const router = new Router({
+  mode: 'history',
   routes: [
     {
       path: '/',
-      name: 'Container',
-      component: Container
+      name: 'home',
+      redirect: "autocomplete"
+    }, 
+    {
+      path: '/autocomplete', 
+      name: 'autocomplete', 
+      component: DitoAutocomplete
+    },
+    {
+      path: '/timeline', 
+      name: 'timeline', 
+      component: DitoTimeLine
     }
   ]
 })
+
+export default router
