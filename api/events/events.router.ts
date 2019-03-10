@@ -9,13 +9,13 @@ class EventRouter extends Router {
             let eventName = req.query.q
             if (eventName) {
                  results = Event.find({event: {'$regex': eventName}})
+                 results.then(events=>{
+                    resp.json(events)                    
+                })                 
             } else {
-                results = Event.find()    
+                resp.json([])   
             } 
-            results.then(events=>{
-                resp.json(events)
-                return next()
-            })
+            return next()
         }), 
 
         application.post('/events', (req, resp, next) => {

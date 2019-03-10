@@ -1,6 +1,6 @@
 <template>    
   <div v-if="query.length > 1">
-    <b-table hover :items="dados" :fields="fields" :filter="query"/>
+    <b-table hover :items="data" :fields="fields"/>
   </div>
 </template>
 
@@ -19,7 +19,7 @@ export default {
     query() {
       return this.$store.state.query;
     },
-    dados() {
+    data() {
       return this.$store.state.events;
     }
   }

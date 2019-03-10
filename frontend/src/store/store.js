@@ -21,14 +21,14 @@ export default new Vuex.Store({
         }
     },
     actions: {
-        loadEvents({commit}) {
-            axios.get('http://localhost:3000/events')
+        loadEvents({commit, state}) {
+            axios.get(`http://localhost:3000/events?q=${state.query}`)
                 .then(response => commit('setEvents', response.data))
         }, 
         loadTimeLine({commit}) {
             axios.get('http://localhost:3000/timeline')
                 .then(response=>commit('setTimeLine', response.data))
-        }
+        }, 
         
     }    
 })

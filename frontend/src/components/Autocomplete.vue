@@ -14,6 +14,7 @@ export default {
       },
       set(value) {
         this.$store.state.query = value;
+        this.$store.dispatch('loadEvents')
       }
     }, 
     search() {

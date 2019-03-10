@@ -5,7 +5,7 @@
         <time-line></time-line>
       </b-col>
       <b-col>
-        <payload></payload>
+        <time-line-payload></time-line-payload>
       </b-col>
     </b-row>
   </div>
@@ -13,11 +13,11 @@
 
 <script>
 import TimeLine from "@/components/TimeLine";
-import Payload from "@/components/Payload";
+import TimeLinePayload from "@/components/TimeLinePayload";
 export default {
   components: {
     TimeLine,
-    Payload
+    TimeLinePayload
   },
   created() {
     this.$store.dispatch("loadTimeLine");
