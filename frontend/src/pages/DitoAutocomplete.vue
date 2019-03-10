@@ -4,6 +4,7 @@
             <b-col>
                 <h2>Autocomplete</h2>
                 <autocomplete></autocomplete>
+                <hr>
                 <custom-table></custom-table>
             </b-col>
             <b-col>
@@ -26,6 +27,10 @@ export default {
     },
     created() {
         this.$store.dispatch('loadEvents')       
-    }
+    },
+    beforeDestroy() {
+      this.$store.state.query = ''  
+      this.$store.dispatch('loadEvents')
+    },
 }
 </script>
