@@ -1,11 +1,13 @@
 <template>
     <div >
         <b-row>
-            <b-col cols="6">
+            <b-col>
+                <h2>Autocomplete</h2>
                 <autocomplete></autocomplete>
                 <custom-table></custom-table>
             </b-col>
-            <b-col cols="6">
+            <b-col>
+                <h2>Payload</h2>
                 <autocomplete-payload></autocomplete-payload>
             </b-col>
         </b-row>                

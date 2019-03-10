@@ -23,9 +23,5 @@ export default {
   }
   .container-fluid {    
     margin-top: 20px;
-    color: #fff !important;    
-  }
-  table {
-    color: #fff
   }
 </style>
