@@ -2,9 +2,7 @@
   <div id="app">
     <nav-bar></nav-bar>
     <b-container fluid>
-      <b-jumbotron>
-        <router-view/>
-      </b-jumbotron>
+      <router-view/>
     </b-container>
   </div>        
 </template>
@@ -20,7 +18,14 @@ export default {
 </script>
 
 <style>
-  .CodeMirror {
-    height: 600px !important;
+  body {
+    background-color: #e6ecf2 !important;
+  }
+  .container-fluid {    
+    margin-top: 20px;
+    color: #fff !important;    
+  }
+  table {
+    color: #fff
   }
 </style>

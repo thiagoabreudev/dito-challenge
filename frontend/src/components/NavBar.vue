@@ -1,7 +1,7 @@
 <template>
-    <b-navbar toggleable="lg" type="dark" variant=info>
+    <b-navbar toggleable="lg"  variant=light>
         <b-navbar-brand href="#">
-            Dito Challenge
+            <img src='../assets/logo.png'/>
         </b-navbar-brand>
         <b-navbar-toggle target="nav_collapse" />        
         <b-navbar-nav>
