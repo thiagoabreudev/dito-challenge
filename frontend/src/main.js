@@ -7,16 +7,20 @@ import BootstrapVue from 'bootstrap-vue'
 import 'bootstrap/dist/css/bootstrap.css'
 import 'bootstrap-vue/dist/bootstrap-vue.css'
 import VueBootstrapTypeahead from 'vue-bootstrap-typeahead'
+import axios from 'axios'
+import VueAxios from 'vue-axios'
+import store from './store/store'
 
 
 Vue.use(BootstrapVue)
+Vue.use(VueAxios, axios)
 Vue.component('vue-bootstrap-typeahead', VueBootstrapTypeahead)
-
 Vue.config.productionTip = false
 
 /* eslint-disable no-new */
 new Vue({
   el: '#app',
+  store,
   router,
   components: { App },
   template: '<App/>'

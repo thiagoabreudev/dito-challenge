@@ -3,6 +3,7 @@ Object.defineProperty(exports, "__esModule", { value: true });
 const restify = require("restify");
 const environment_1 = require("../common/environment");
 const mongoose = require("mongoose");
+const corsMiddleware = require("restify-cors-middleware");
 class Server {
     initDb() {
         mongoose.Promise = global.Promise;
@@ -17,6 +18,15 @@ class Server {
                     name: 'dito-challenge',
                     version: '1.0.0'
                 });
+                const corsOptions = {
+                    preflightMaxAge: 10,
+                    origins: ['*'],
+                    allowHeaders: [],
+                    exposeHeaders: []
+                };
+                const cors = corsMiddleware(corsOptions);
+                this.application.pre(cors.preflight);
+                this.application.use(cors.actual);
                 this.application.use(restify.plugins.queryParser());
                 this.application.use(restify.plugins.bodyParser());
                 //routes

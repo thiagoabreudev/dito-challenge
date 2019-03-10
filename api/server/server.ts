@@ -2,6 +2,7 @@ import * as restify from 'restify'
 import {environment} from '../common/environment'
 import {Router} from '../common/router'
 import * as mongoose from 'mongoose'
+import * as corsMiddleware from 'restify-cors-middleware'
 
 export class Server {
     application: restify.Server
@@ -18,6 +19,15 @@ export class Server {
                     name:'dito-challenge', 
                     version: '1.0.0'
                 })
+                const corsOptions: corsMiddleware.Options = {
+                    preflightMaxAge: 10, 
+                    origins: ['*'], 
+                    allowHeaders: [], 
+                    exposeHeaders: []
+                }
+                const cors: corsMiddleware.CorsMiddleware = corsMiddleware(corsOptions)
+                this.application.pre(cors.preflight)
+                this.application.use(cors.actual)
                 this.application.use(restify.plugins.queryParser())
                 this.application.use(restify.plugins.bodyParser())
 

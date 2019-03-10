@@ -22,10 +22,17 @@
 import DitoAutocomplete from '@/components/DitoAutocomplete'
 import DitoTable from '@/components/DitoTable'
 export default {
-  data() {
-    return {
-
-    };
-  }
+  components: {
+    DitoAutocomplete,
+    DitoTable
+  },  
+  created() {
+    this.$store.dispatch('loadEvents')
+  },
+  computed: {
+    events() {
+      return this.$store.state.events
+    }
+  },
 };
 </script>
