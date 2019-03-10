@@ -3,7 +3,10 @@
         <b-row>
             <b-col>
                 <h2>Autocomplete</h2>
-                <autocomplete></autocomplete>
+                <b-row>
+                    <b-col cols=8><autocomplete></autocomplete></b-col>
+                    <b-col cols=2><new-event></new-event></b-col>
+                </b-row>                
                 <hr>
                 <custom-table></custom-table>
             </b-col>
@@ -19,11 +22,14 @@
 import Autocomplete from '@/components/Autocomplete'
 import CustomTable from '@/components/CustomTable'
 import AutocompletePayload from '@/components/AutocompletePayload'
+import NewEvent from '@/components/NewEvent'
+
 export default {
     components: {
         Autocomplete, 
         CustomTable, 
-        AutocompletePayload
+        AutocompletePayload, 
+        NewEvent
     },
     created() {
         this.$store.dispatch('loadEvents')       

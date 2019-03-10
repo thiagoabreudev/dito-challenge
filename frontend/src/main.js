@@ -12,11 +12,14 @@ import axios from 'axios'
 import VueAxios from 'vue-axios'
 import store from './store/store'
 import "@/filter/filter.js"
+import VueSweetalert2 from 'vue-sweetalert2';
 
 Vue.use(BootstrapVue)
 Vue.use(VueAxios, axios)
 Vue.component('vue-bootstrap-typeahead', VueBootstrapTypeahead)
 Vue.use(LightTimeline);
+Vue.use(VueSweetalert2)
+
 Vue.config.productionTip = false
 
 /* eslint-disable no-new */
