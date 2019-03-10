@@ -10,9 +10,8 @@
       }
     },
     methods: {
-        showForm(){ 
-            let self = this;
-            this.$swal.fire({
+        async showForm(){ 
+            const {value: value} = await this.$swal.fire({
                 title: 'Informe o nome do evento',
                 input: 'text',
                 inputPlaceholder: 'Informe o nome do evento',
@@ -25,10 +24,16 @@
                         return 'O nome do evento é obrigatório'
                     } else {
                         let newEvent = {event: value}
-                        this.$store.dispatch('addEvent', newEvent)
+                        this.$store.dispatch('addEvent', newEvent)                                                            
                     }
                 }
             })
+            if (value) {
+                this.$swal.fire({
+                    type: 'success', 
+                    text: 'Evento criado com sucesso!'
+                })
+            }
         }
     },
   }
