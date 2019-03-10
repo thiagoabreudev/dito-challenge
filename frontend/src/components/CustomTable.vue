@@ -5,7 +5,7 @@
     </div>    
     <div v-else>
       <b-alert show variant="info" v-if="query.length < 2">
-        Informe pelomenos 2 caracters na pesquisa
+        Informe no mínimo 2 caracters na pesquisa
       </b-alert>
       <b-alert v-else show variant="warning">
         Não foi encontrado registros de acordo com a pesquisa
