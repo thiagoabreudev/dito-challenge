@@ -1,12 +1,12 @@
 <template>
   <div>
-    <vue-bootstrap-typeahead placeholder="Pesquisar..." v-model="query" :data="[]"/>
+    <vue-bootstrap-typeahead placeholder="Pesquisar..." v-model="query" :data="search"/>
   </div>
 </template>
 
 <script>
 export default {
-  name: "DitoAutocomplete",  
+  name: "DitoAutocomplete",    
   computed: {
     query: {
       get() {
@@ -15,6 +15,10 @@ export default {
       set(value) {
         this.$store.state.query = value;
       }
+    }, 
+    search() {
+      const itemSets = new Set(this.$store.state.events.map((event)=>event.event))
+      return Array.from(itemSets)
     }
   }
 };
