@@ -1,7 +1,7 @@
 version: '3'
 services: 
   node: 
-    command: 'pm2 start /api/dist/main.js -i 0'
+    command: 'pm2 start /api/dist/main.js -i 0 --no-daemon'
     ports: 
       - '4000:4000'    
     depends_on: 
