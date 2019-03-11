@@ -19,8 +19,11 @@ export default {
       }
     },
     search () {
-      const itemSets = new Set(this.$store.state.events.results.map((event) => event.event))
-      return Array.from(itemSets)
+      if (this.$store.events) {
+        const itemSets = new Set(this.$store.state.events.results.map((event) => event.event))
+        return Array.from(itemSets)
+      }
+      return []
     }
   }
 }
