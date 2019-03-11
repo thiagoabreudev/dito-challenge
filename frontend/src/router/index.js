@@ -11,16 +11,16 @@ const router = new Router({
     {
       path: '/',
       name: 'home',
-      redirect: "autocomplete"
-    }, 
+      redirect: 'autocomplete'
+    },
     {
-      path: '/autocomplete', 
-      name: 'autocomplete', 
+      path: '/autocomplete',
+      name: 'autocomplete',
       component: DitoAutocomplete
     },
     {
-      path: '/timeline', 
-      name: 'timeline', 
+      path: '/timeline',
+      name: 'timeline',
       component: DitoTimeLine
     }
   ]

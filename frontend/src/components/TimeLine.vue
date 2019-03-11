@@ -5,10 +5,9 @@
 </template>
 
 <script>
-const theme = "red";
 export default {
   computed: {
-    items() {
+    items () {
       let items = []
       for (let item of this.$store.state.timeline.timeline) {
         items.push({
@@ -21,23 +20,23 @@ export default {
           <strong>Produtos:</strong>          
           ${this.getHtmlProducts(item.products)}
           <hr/>
-          `          
+          `
         })
       }
       return items
-    }    
-  }, 
+    }
+  },
   methods: {
-    formatPrice(value) {
-      return parseFloat(value).toLocaleString("pt-BR", { style: "currency" , currency:"BRL"})
+    formatPrice (value) {
+      return parseFloat(value).toLocaleString('pt-BR', {style: 'currency', currency: 'BRL'})
     },
-    getHtmlProduct(product) {
+    getHtmlProduct (product) {
       let htmlProduct = `<div style="">
         <strong>${product.name}</strong> por <strong>${this.formatPrice(product.price)}</strong>
       </div>`
       return htmlProduct
     },
-    getHtmlProducts(products) {
+    getHtmlProducts (products) {
       let htmlProducts = ``
       for (let product of products) {
         htmlProducts += `${this.getHtmlProduct(product)}`
@@ -45,5 +44,5 @@ export default {
       return htmlProducts
     }
   }
-};
+}
 </script>

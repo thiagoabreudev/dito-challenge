@@ -2,7 +2,7 @@
     <div>
   <b-navbar toggleable="lg" variant="light">
     <b-navbar-brand href="#">
-        <img src='../assets/logo.png'/>        
+        <img src='../assets/logo.png'/>
     </b-navbar-brand>
 
     <b-navbar-toggle target="nav_collapse" />
@@ -17,9 +17,8 @@
 </div>
 </template>
 
-
 <script>
 export default {
-    
+
 }
 </script>

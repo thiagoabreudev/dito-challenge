@@ -6,21 +6,21 @@
 
 <script>
 export default {
-  name: "DitoAutocomplete",    
+  name: 'DitoAutocomplete',
   computed: {
     query: {
-      get() {
-        return this.$store.state.query;
+      get () {
+        return this.$store.state.query
       },
-      set(value) {
-        this.$store.state.query = value;
+      set (value) {
+        this.$store.state.query = value
         this.$store.dispatch('loadEvents')
       }
-    }, 
-    search() {
-      const itemSets = new Set(this.$store.state.events.map((event)=>event.event))
+    },
+    search () {
+      const itemSets = new Set(this.$store.state.events.map((event) => event.event))
       return Array.from(itemSets)
     }
   }
-};
+}
 </script>

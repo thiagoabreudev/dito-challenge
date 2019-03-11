@@ -4,13 +4,13 @@
     <b-container fluid>
       <router-view/>
     </b-container>
-  </div>        
+  </div>
 </template>
 
 <script>
 import NavBar from '@/components/NavBar'
 export default {
-  name: 'App', 
+  name: 'App',
   components: {
     NavBar
   }
@@ -21,7 +21,7 @@ export default {
   body {
     background-color: #e6ecf2 !important;
   }
-  .container-fluid {    
+  .container-fluid {
     margin-top: 20px;
   }
 </style>

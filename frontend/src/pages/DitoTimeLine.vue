@@ -14,15 +14,15 @@
 </template>
 
 <script>
-import TimeLine from "@/components/TimeLine";
-import TimeLinePayload from "@/components/TimeLinePayload";
+import TimeLine from '@/components/TimeLine'
+import TimeLinePayload from '@/components/TimeLinePayload'
 export default {
   components: {
     TimeLine,
     TimeLinePayload
   },
-  created() {
-    this.$store.dispatch("loadTimeLine");
+  created () {
+    this.$store.dispatch('loadTimeLine')
   }
-};
+}
 </script>

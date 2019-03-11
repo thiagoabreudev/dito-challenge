@@ -1,34 +1,34 @@
-<template>    
+<template>
   <div>
     <div v-if="query.length > 1 && data.length > 0">
       <b-table hover :items="data" :fields="fields" striped/>
-    </div>    
+    </div>
     <div v-else>
       <b-alert show variant="info" v-if="query.length < 2">
         Informe no mínimo 2 caracters na pesquisa
       </b-alert>
       <b-alert v-else show variant="warning">
         Não foi encontrado registros de acordo com a pesquisa
-      </b-alert>      
+      </b-alert>
     </div>
   </div>
 </template>
 
 <script>
 export default {
-  name: "DitoTable",
-  data() {
+  name: 'DitoTable',
+  data () {
     return {
-      fields: ["event", "timestamp"]
-    };
+      fields: ['event', 'timestamp']
+    }
   },
   computed: {
-    query() {
-      return this.$store.state.query;
+    query () {
+      return this.$store.state.query
     },
-    data() {
-      return this.$store.state.events;
+    data () {
+      return this.$store.state.events
     }
   }
-};
+}
 </script>

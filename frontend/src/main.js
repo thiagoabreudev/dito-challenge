@@ -11,8 +11,8 @@ import LightTimeline from 'vue-light-timeline'
 import axios from 'axios'
 import VueAxios from 'vue-axios'
 import store from './store/store'
-import "@/filter/filter.js"
-import VueSweetalert2 from 'vue-sweetalert2';
+import '@/filter/filter.js'
+import VueSweetalert2 from 'vue-sweetalert2'
 
 Vue.use(BootstrapVue)
 
@@ -20,9 +20,8 @@ axios.defaults.baseURL = `${process.env.API_HOST}`
 Vue.use(VueAxios, axios)
 
 Vue.component('vue-bootstrap-typeahead', VueBootstrapTypeahead)
-Vue.use(LightTimeline);
+Vue.use(LightTimeline)
 Vue.use(VueSweetalert2)
-
 
 Vue.config.productionTip = false
 
