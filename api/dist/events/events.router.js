@@ -7,7 +7,7 @@ class EventRouter extends router_1.Router {
         application.get('/events', (req, resp, next) => {
             let results;
             let eventName = req.query.q;
-            if (eventName.length > 1) {
+            if (eventName && eventName.length > 1) {
                 results = events_model_1.Event.find({ event: { '$regex': eventName } });
                 results.then(events => {
                     resp.json(events);
