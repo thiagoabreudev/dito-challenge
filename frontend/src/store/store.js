@@ -8,8 +8,11 @@ Vue.use(VueAxios, axios)
 
 export default new Vuex.Store({
   state: {
+    currentPage: 1,
     query: '',
-    events: [],
+    events: {
+      results: []
+    },
     timeline: { timeline: [] }
   },
   mutations: {
@@ -26,7 +29,7 @@ export default new Vuex.Store({
         .then(response => dispatch('loadEvents'))
     },
     loadEvents ({ commit, state }) {
-      axios.get(`/events?q=${state.query}`)
+      axios.get(`/events?_page=${state.currentPage}&q=${state.query}`)
         .then(response => commit('setEvents', response.data))
     },
     loadTimeLine ({ commit }) {
