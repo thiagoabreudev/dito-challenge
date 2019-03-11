@@ -5,7 +5,7 @@ services:
     ports: 
       - '4000:4000'    
     depends_on: 
-      - 'mongo'
+      - 'mongodb'
   vue: 
     command: 'npm run build'
     ports: 
