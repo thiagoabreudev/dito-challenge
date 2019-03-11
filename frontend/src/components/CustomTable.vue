@@ -1,6 +1,5 @@
 <template>
   <div>
-    <h1>Teste</h1>        
     <div v-if="query.length > 1 && data.results && data.results.length > 0">
       <b-table hover :items="data.results" :fields="fields" striped/>
       <b-row>
@@ -13,7 +12,6 @@
           />
         </b-col>
       </b-row>
-      
     </div>
     <div v-else>
       <b-alert show variant="info" v-if="query.length < 2">
@@ -36,11 +34,11 @@ export default {
   },
   computed: {
     currentPage: {
-      set(value) {
+      set (value) {
         this.$store.state.currentPage = value
         this.$store.dispatch('loadEvents')
       }
-    },    
+    },
     query () {
       return this.$store.state.query
     },

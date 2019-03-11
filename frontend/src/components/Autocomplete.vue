@@ -18,7 +18,7 @@ export default {
         this.$store.dispatch('loadEvents')
       }
     },
-    search () {      
+    search () {
       const itemSets = new Set(this.$store.state.events.results.map((event) => event.event))
       return Array.from(itemSets)
     }
