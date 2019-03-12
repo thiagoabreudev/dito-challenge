@@ -19,8 +19,7 @@ Este repositório contém um teste técnico, onde foi desenvolvido uma funcional
 * **Frontend**: o front desenvolvido, pode ser acessado através do link http://front-dito.thiagoabreudev.com.br. 
 Esta página conterá a implementação do visual do autocomplete e da timeline. 
 * **API de eventos**: poderá ser acessada através da url http://api-dito.thiagoabreudev.com.br/events
-
-Lembrando que conforme solicitado no teste, os eventos são carregados a partir da pesquisa com 2 caracteres. Para realizar a pesquisa, foi implementado o parâmetro “q”, desta forma, caso queira pesquisar todos os eventos “buy”, basta consumir o endpoint da seguinte forma: http://api-dito.thiagoabreudev.com.br/events?q=buy
+`Lembrando que conforme solicitado no teste, os eventos são carregados a partir da pesquisa com 2 caracteres. Para realizar a pesquisa, foi implementado o parâmetro “q”, desta forma, caso queira pesquisar todos os eventos “buy”, basta consumir o endpoint da seguinte forma: http://api-dito.thiagoabreudev.com.br/events?q=buy` 
 
 Para trabalhar com um volume grande de eventos sem impactar de forma considerável na performance, foi implementado uma paginação através do parâmetro “_page”. Desta forma caso deseje acessar a página 10 de uma determinada busca, basta consumir o seguinte endpoint: http://api-dito.thiagoabreudev.com.br/events?_page=10&q=buy
 
