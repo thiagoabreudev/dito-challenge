@@ -19,7 +19,7 @@ export default {
       }
     },
     search () {
-      if (this.$store.events) {
+      if (this.$store.state.events.results) {
         const itemSets = new Set(this.$store.state.events.results.map((event) => event.event))
         return Array.from(itemSets)
       }
