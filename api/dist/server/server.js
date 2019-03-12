@@ -18,6 +18,7 @@ class Server {
                     name: 'dito-challenge',
                     version: '1.0.0'
                 });
+                this.application.pre(restify.pre.sanitizePath());
                 const corsOptions = {
                     preflightMaxAge: 10,
                     origins: ['*'],

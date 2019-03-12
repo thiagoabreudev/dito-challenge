@@ -19,12 +19,13 @@ export class Server {
                     name:'dito-challenge', 
                     version: '1.0.0'
                 })
+                this.application.pre(restify.pre.sanitizePath());
                 const corsOptions: corsMiddleware.Options = {
                     preflightMaxAge: 10, 
                     origins: ['*'], 
                     allowHeaders: [], 
                     exposeHeaders: []
-                }
+                }                
                 const cors: corsMiddleware.CorsMiddleware = corsMiddleware(corsOptions)
                 this.application.pre(cors.preflight)
                 this.application.use(cors.actual)
