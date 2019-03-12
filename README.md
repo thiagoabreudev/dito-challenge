@@ -56,4 +56,4 @@ Após subir todos os containers a aplicação poderá ser acessada no seguintes 
 | Aplicação        | Host          | Porta  |
 | -----------------|:-------------:| ------:|
 | api              | localhost     | 3000   |
-| col 2 is         | localhost     | 8080   |
+| frontend         | localhost     | 8080   |
