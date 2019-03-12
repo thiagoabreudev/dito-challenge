@@ -14,7 +14,7 @@ class EventRouter extends Router {
         }
         if (options.page) {
             if (options.page > 1) {
-                resources._link['previous'] = `/events?_page=${options.page+1}&q=${options.q}`    
+                resources._link['previous'] = `/events?_page=${options.page-1}&q=${options.q}`    
             }
             const remaining = options.count - (options.page * options.pageSize)
             if (remaining > 0) {
