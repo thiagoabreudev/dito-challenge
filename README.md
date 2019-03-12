@@ -29,12 +29,31 @@ Esta página conterá a implementação do visual do autocomplete e da timeline.
 # Como rodar este projeto localmente?
 
 ## Requisitos: 
+* Sitema operaciona baseado em Unix
 * Git - https://git-scm.com/downloads
 * Docker - https://docs.docker.com/docker-for-windows/install/
 * Docker Compose - https://docs.docker.com/compose/install/
 
-# Passos: 
+## Passos: 
 1 - Clonar o repositório
 ```bash
 git clone https://github.com/thiagoabreudev/dito-challenge.git && cd dito-challenge
 ```
+2 - Setar para o ambiente de desenvolvimento com o comando: 
+```bash
+make set_env_development
+```
+3 - Fazer o build dos containers
+```bash
+docker-compose build
+```
+4 - Subir os containers
+```bash
+docker-compose up
+```
+Após subir todos os containers a aplicação poderá ser acessada no seguintes endereços: 
+
+| Aplicação        | Host          | Porta  |
+| -----------------|:-------------:| ------:|
+| api              | localhost     | 3000   |
+| col 2 is         | localhost     | 8080   |
