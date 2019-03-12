@@ -14,3 +14,8 @@ Este repositório contém um teste técnico, onde foi desenvolvido uma funcional
 ## Ambiente de Desenvolvimento e Produção: 
 * Docker - https://www.docker.com/
 * Docker Compose - https://docs.docker.com/compose/
+
+# Demonstração
+* Frontend: o front desenvolvido, pode ser acessado através do link http://front-dito.thiagoabreudev.com.br. 
+Esta página conterá a implementação do visual do autocomplete e da timeline. 
+
