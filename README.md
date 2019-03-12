@@ -26,3 +26,15 @@ Esta página conterá a implementação do visual do autocomplete e da timeline.
 
 `Para trabalhar com um volume grande de eventos sem impactar de forma considerável na performance, foi implementado uma paginação através do parâmetro “_page”. Desta forma caso deseje acessar a página 10 de uma determinada busca, basta consumir o seguinte endpoint: http://api-dito.thiagoabreudev.com.br/events?_page=10&q=buy`
 
+# Como rodar este projeto localmente?
+
+## Requisitos: 
+* Git - https://git-scm.com/downloads
+* Docker - https://docs.docker.com/docker-for-windows/install/
+* Docker Compose - https://docs.docker.com/compose/install/
+
+# Passos: 
+1 - Clonar o repositório
+```bash
+git clone https://github.com/thiagoabreudev/dito-challenge.git && cd dito-challenge
+```
